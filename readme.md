@@ -1,6 +1,12 @@
 # vscode-webview-tools
 
+[![](https://badgen.net/bundlephobia/minzip/vscode-webview-tools)](https://bundlephobia.com/result?p=vscode-webview-tools) ![Run Tests](https://github.com/connor4312/vscode-webview-tools/workflows/Run%20Tests/badge.svg) ![](https://img.shields.io/badge/dependencies-none-green)
+
 Miscellaneous tools for building things in VS Code webviews.
+
+```
+npm install --save vscode-webview-tools
+```
 
 ## Table of Contents
 
