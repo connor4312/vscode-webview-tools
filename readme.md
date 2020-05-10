@@ -121,7 +121,7 @@ import { useState, useEffect } from 'preact/hooks';
 
 const useTheme = () => {
   const [theme, setTheme] = useState<{ [key: string]: string }>({});
-  useEffect(() => observeTheme(settheme), []);
+  useEffect(() => observeTheme(setTheme), []);
   return theme;
 };
 

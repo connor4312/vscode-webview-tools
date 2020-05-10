@@ -26,11 +26,11 @@ export const getTheme = () => {
  * ```
  * import { useState, useEffect } from 'preact/hooks';
  *
- * const useCssVariables = () => {
- *   const [vars, setVars] = useState<{ [key: string]: string }>({});
- *   useEffect(() => observeColors(setVars), []);
- *   return vars;
- * }
+ * const useTheme = () => {
+ *   const [theme, setTheme] = useState<{ [key: string]: string }>({});
+ *   useEffect(() => observeTheme(setTheme), []);
+ *   return theme;
+ * };
  * ```
  */
 export const observeTheme = (onChange: (theme: Theme) => void): (() => void) => {
