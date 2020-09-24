@@ -102,6 +102,18 @@ export const enum Color {
    */
   TabUnfocusedHoverForeground = 'tab-unfocusedHoverForeground',
   /**
+   * Border to separate tabs from each other. Tabs are the containers for
+   * editors in the editor area. Multiple tabs can be opened in one editor
+   * group. There can be multiple editor groups.
+   */
+  TabBorder = 'tab-border',
+  /**
+   * Border to separate pinned tabs from other tabs. Tabs are the containers
+   * for editors in the editor area. Multiple tabs can be opened in one editor
+   * group. There can be multiple editor groups.
+   */
+  TabLastPinnedBorder = 'tab-lastPinnedBorder',
+  /**
    * Border on the bottom of an active tab. Tabs are the containers for editors
    * in the editor area. Multiple tabs can be opened in one editor group. There
    * can be multiple editor groups.
@@ -161,12 +173,6 @@ export const enum Color {
    * be opened in one editor group. There can be multiple editor groups.
    */
   TabUnfocusedInactiveModifiedBorder = 'tab-unfocusedInactiveModifiedBorder',
-  /**
-   * Border to separate tabs from each other. Tabs are the containers for
-   * editors in the editor area. Multiple tabs can be opened in one editor
-   * group. There can be multiple editor groups.
-   */
-  TabBorder = 'tab-border',
   /**
    * Background color of the editor pane visible on the left and right side of
    * the centered editor layout.
@@ -248,16 +254,43 @@ export const enum Color {
    */
   PanelTitleActiveBorder = 'panelTitle-activeBorder',
   /**
-   * Drag and drop feedback color for the panel title items. The color should
-   * have transparency so that the panel entries can still shine through.
-   * Panels are shown below the editor area and contain views like output and
-   * integrated terminal.
-   */
-  PanelDropBackground = 'panel-dropBackground',
-  /**
    * Input box border for inputs in the panel.
    */
   PanelInputBorder = 'panelInput-border',
+  /**
+   * Drag and drop feedback color for the panel titles. Panels are shown below
+   * the editor area and contain views like output and integrated terminal.
+   */
+  PanelDropBorder = 'panel-dropBorder',
+  /**
+   * Drag and drop feedback color for the panel sections. The color should have
+   * transparency so that the panel sections can still shine through. Panels
+   * are shown below the editor area and contain views like output and
+   * integrated terminal.
+   */
+  PanelSectionDropBackground = 'panelSection-dropBackground',
+  /**
+   * Panel section header background color. Panels are shown below the editor
+   * area and contain views like output and integrated terminal.
+   */
+  PanelSectionHeaderBackground = 'panelSectionHeader-background',
+  /**
+   * Panel section header foreground color. Panels are shown below the editor
+   * area and contain views like output and integrated terminal.
+   */
+  PanelSectionHeaderForeground = 'panelSectionHeader-foreground',
+  /**
+   * Panel section header border color used when multiple views are stacked
+   * vertically in the panel. Panels are shown below the editor area and
+   * contain views like output and integrated terminal.
+   */
+  PanelSectionHeaderBorder = 'panelSectionHeader-border',
+  /**
+   * Panel section border color used when multiple views are stacked
+   * horizontally in the panel. Panels are shown below the editor area and
+   * contain views like output and integrated terminal.
+   */
+  PanelSectionBorder = 'panelSection-border',
   /**
    * Status bar foreground color when a workspace is opened. The status bar is
    * shown in the bottom of the window.
@@ -361,12 +394,11 @@ export const enum Color {
    */
   ActivityBarActiveBackground = 'activityBar-activeBackground',
   /**
-   * Drag and drop feedback color for the activity bar items. The color should
-   * have transparency so that the activity bar entries can still shine
-   * through. The activity bar is showing on the far left or right and allows
-   * to switch between views of the side bar.
+   * Drag and drop feedback color for the activity bar items. The activity bar
+   * is showing on the far left or right and allows to switch between views of
+   * the side bar.
    */
-  ActivityBarDropBackground = 'activityBar-dropBackground',
+  ActivityBarDropBorder = 'activityBar-dropBorder',
   /**
    * Activity notification badge background color. The activity bar is showing
    * on the far left or right and allows to switch between views of the side
@@ -437,28 +469,23 @@ export const enum Color {
    */
   SideBarSectionHeaderBorder = 'sideBarSectionHeader-border',
   /**
-   * Title bar foreground when the window is active. Note that this color is
-   * currently only supported on macOS.
+   * Title bar foreground when the window is active.
    */
   TitleBarActiveForeground = 'titleBar-activeForeground',
   /**
-   * Title bar foreground when the window is inactive. Note that this color is
-   * currently only supported on macOS.
+   * Title bar foreground when the window is inactive.
    */
   TitleBarInactiveForeground = 'titleBar-inactiveForeground',
   /**
-   * Title bar background when the window is active. Note that this color is
-   * currently only supported on macOS.
+   * Title bar background when the window is active.
    */
   TitleBarActiveBackground = 'titleBar-activeBackground',
   /**
-   * Title bar background when the window is inactive. Note that this color is
-   * currently only supported on macOS.
+   * Title bar background when the window is inactive.
    */
   TitleBarInactiveBackground = 'titleBar-inactiveBackground',
   /**
-   * Title bar border color. Note that this color is currently only supported
-   * on macOS.
+   * Title bar border color.
    */
   TitleBarBorder = 'titleBar-border',
   /**
@@ -909,6 +936,10 @@ export const enum Color {
    */
   PeekViewEditorMatchHighlightBorder = 'peekViewEditor-matchHighlightBorder',
   /**
+   * Background color when the editor auto renames on type.
+   */
+  EditorOnTypeRenameBackground = 'editor-onTypeRenameBackground',
+  /**
    * Background color of the suggest widget.
    */
   EditorSuggestWidgetBackground = 'editorSuggestWidget-background',
@@ -1050,6 +1081,10 @@ export const enum Color {
    */
   InputOptionActiveBackground = 'inputOption-activeBackground',
   /**
+   * Foreground color of activated options in input fields.
+   */
+  InputOptionActiveForeground = 'inputOption-activeForeground',
+  /**
    * Input box foreground color for placeholder text.
    */
   InputPlaceholderForeground = 'input-placeholderForeground',
@@ -1129,6 +1164,18 @@ export const enum Color {
    * Button background color when hovering.
    */
   ButtonHoverBackground = 'button-hoverBackground',
+  /**
+   * Secondary button foreground color.
+   */
+  ButtonSecondaryForeground = 'button-secondaryForeground',
+  /**
+   * Secondary button background color.
+   */
+  ButtonSecondaryBackground = 'button-secondaryBackground',
+  /**
+   * Secondary button background color when hovering.
+   */
+  ButtonSecondaryHoverBackground = 'button-secondaryHoverBackground',
   /**
    * Badge background color. Badges are small information labels, e.g. for
    * search results count.
@@ -1495,7 +1542,7 @@ export const enum Color {
    */
   EditorSnippetFinalTabstopHighlightBackground = 'editor-snippetFinalTabstopHighlightBackground',
   /**
-   * Highlight border color of the final stabstop of a snippet.
+   * Highlight border color of the final tabstop of a snippet.
    */
   EditorSnippetFinalTabstopHighlightBorder = 'editor-snippetFinalTabstopHighlightBorder',
   /**
@@ -1619,6 +1666,38 @@ export const enum Color {
    */
   ProblemsInfoIconForeground = 'problemsInfoIcon-foreground',
   /**
+   * The foreground color used in charts.
+   */
+  ChartsForeground = 'charts-foreground',
+  /**
+   * The color used for horizontal lines in charts.
+   */
+  ChartsLines = 'charts-lines',
+  /**
+   * The red color used charts.
+   */
+  ChartsRed = 'charts-red',
+  /**
+   * The blue color used charts.
+   */
+  ChartsBlue = 'charts-blue',
+  /**
+   * The yellow color used charts.
+   */
+  ChartsYellow = 'charts-yellow',
+  /**
+   * The orange color used charts.
+   */
+  ChartsOrange = 'charts-orange',
+  /**
+   * The green color used charts.
+   */
+  ChartsGreen = 'charts-green',
+  /**
+   * The purple color used charts.
+   */
+  ChartsPurple = 'charts-purple',
+  /**
    * Editor gutter decoration color for commenting ranges.
    */
   EditorGutterCommentRangeForeground = 'editorGutter-commentRangeForeground',
@@ -1705,6 +1784,26 @@ export const enum Color {
    * Variables view).
    */
   DebugViewValueChangedHighlight = 'debugView-valueChangedHighlight',
+  /**
+   * Foreground color for info messages in debug REPL console.
+   */
+  DebugConsoleInfoForeground = 'debugConsole-infoForeground',
+  /**
+   * Foreground color for warning messages in debug REPL console.
+   */
+  DebugConsoleWarningForeground = 'debugConsole-warningForeground',
+  /**
+   * Foreground color for error messages in debug REPL console.
+   */
+  DebugConsoleErrorForeground = 'debugConsole-errorForeground',
+  /**
+   * Foreground color for source filenames in debug REPL console.
+   */
+  DebugConsoleSourceForeground = 'debugConsole-sourceForeground',
+  /**
+   * Foreground color for debug console input marker icon.
+   */
+  DebugConsoleInputIconForeground = 'debugConsoleInputIcon-foreground',
   /**
    * Debug toolbar background color.
    */
@@ -1793,17 +1892,69 @@ export const enum Color {
    */
   ExtensionButtonProminentHoverBackground = 'extensionButton-prominentHoverBackground',
   /**
-   * The color of the focused notebook cell indicator.
+   * The border color for notebook cells.
    */
-  NotebookFocusedCellIndicator = 'notebook-focusedCellIndicator',
+  NotebookCellBorderColor = 'notebook-cellBorderColor',
+  /**
+   * The color of the notebook cell editor border.
+   */
+  NotebookFocusedEditorBorder = 'notebook-focusedEditorBorder',
+  /**
+   * The error icon color of notebook cells in the cell status bar.
+   */
+  NotebookStatusSuccessIconForeground = 'notebookStatusSuccessIcon-foreground',
+  /**
+   * The error icon color of notebook cells in the cell status bar.
+   */
+  NotebookStatusErrorIconForeground = 'notebookStatusErrorIcon-foreground',
+  /**
+   * The running icon color of notebook cells in the cell status bar.
+   */
+  NotebookStatusRunningIconForeground = 'notebookStatusRunningIcon-foreground',
   /**
    * The Color of the notebook output container background.
    */
   NotebookOutputContainerBackgroundColor = 'notebook-outputContainerBackgroundColor',
   /**
-   * The color of seperator in Cell bottom toolbar
+   * The color of the seperator in the cell bottom toolbar
    */
-  NotebookCellToolbarSeperator = 'notebook-cellToolbarSeperator',
+  NotebookCellToolbarSeparator = 'notebook-cellToolbarSeparator',
+  /**
+   * The background color of a cell when the cell is focused.
+   */
+  NotebookFocusedCellBackground = 'notebook-focusedCellBackground',
+  /**
+   * The background color of a cell when the cell is hovered.
+   */
+  NotebookCellHoverBackground = 'notebook-cellHoverBackground',
+  /**
+   * The color of the cell's top and bottom border when the cell is focused.
+   */
+  NotebookFocusedCellBorder = 'notebook-focusedCellBorder',
+  /**
+   * The background color of notebook cell status bar items.
+   */
+  NotebookCellStatusBarItemHoverBackground = 'notebook-cellStatusBarItemHoverBackground',
+  /**
+   * The color of the notebook cell insertion indicator.
+   */
+  NotebookCellInsertionIndicator = 'notebook-cellInsertionIndicator',
+  /**
+   * Notebook scrollbar slider background color.
+   */
+  NotebookScrollbarSliderBackground = 'notebookScrollbarSlider-background',
+  /**
+   * Notebook scrollbar slider background color when hovering.
+   */
+  NotebookScrollbarSliderHoverBackground = 'notebookScrollbarSlider-hoverBackground',
+  /**
+   * Notebook scrollbar slider background color when clicked on.
+   */
+  NotebookScrollbarSliderActiveBackground = 'notebookScrollbarSlider-activeBackground',
+  /**
+   * Background color of highlighted cell
+   */
+  NotebookSymbolHighlightBackground = 'notebook-symbolHighlightBackground',
   /**
    * The foreground color for a section header or active title.
    */
@@ -1812,10 +1963,6 @@ export const enum Color {
    * The color of the modified setting indicator.
    */
   SettingsModifiedItemIndicator = 'settings-modifiedItemIndicator',
-  /**
-   * Settings editor dropdown background.
-   */
-  SettingsDropdownBackground = 'settings-dropdownBackground',
   /**
    * Settings editor dropdown foreground.
    */
@@ -1866,6 +2013,18 @@ export const enum Color {
    */
   SettingsNumberInputBorder = 'settings-numberInputBorder',
   /**
+   * The background color of a settings row when focused.
+   */
+  SettingsFocusedRowBackground = 'settings-focusedRowBackground',
+  /**
+   * The background color of a settings row when hovered.
+   */
+  NotebookRowHoverBackground = 'notebook-rowHoverBackground',
+  /**
+   * The color of the row's top and bottom border when the row is focused.
+   */
+  NotebookFocusedRowBorder = 'notebook-focusedRowBorder',
+  /**
    * Editor gutter background color for lines that are modified.
    */
   EditorGutterModifiedBackground = 'editorGutter-modifiedBackground',
@@ -1901,6 +2060,10 @@ export const enum Color {
    * Overview ruler marker color for deleted content.
    */
   EditorOverviewRulerDeletedForeground = 'editorOverviewRuler-deletedForeground',
+  /**
+   * SCM Provider separator border.
+   */
+  ScmProviderBorder = 'scm-providerBorder',
   /**
    * Search editor text input box border.
    */
