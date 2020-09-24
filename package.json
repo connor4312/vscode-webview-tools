@@ -1,6 +1,6 @@
 {
   "name": "vscode-webview-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Miscellaneous tools for building things in VS Code webviews",
   "main": "dist/pkg/index.js",
   "module": "dist/pkg/index.js",
